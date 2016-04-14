@@ -4,7 +4,8 @@
   "description": "onions backend event collector, koala's brother.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "NODE_PATH=./src/controllers NODE_ENV=dev pm2-dev start ./backendTrack.js",
+    "prod": "NODE_PATH=./src/controllers NODE_ENV=prod pm2 start ./backendTrack.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,7 @@
   "bugs": {
     "url": "https://github.com/diggzhang/kangaroo/issues"
   },
-  "homepage": "https://github.com/diggzhang/kangaroo#readme"
+  "devDependencies": {
+    "babel": "^5.8.23"
+  }
 }

@@ -1,0 +1,19 @@
+{
+  "name": "kangaroo",
+  "version": "1.0.0",
+  "description": "onions backend event collector, koala's brother.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diggzhang/kangaroo.git"
+  },
+  "author": "diggzhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diggzhang/kangaroo/issues"
+  },
+  "homepage": "https://github.com/diggzhang/kangaroo#readme"
+}

@@ -37,7 +37,7 @@ mongoose.connection.on("connected", () => {
   require('./config/middleware')(app);
 
   app.listen(server.port);
-  console.log(`Events API Backend server listening on port ${port}`);
+  console.log(`Backend http log server listening on port ${port}`);
   console.log(`Environment: ${env}`);
 
 });

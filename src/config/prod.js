@@ -1,6 +1,6 @@
 export default {
   "server": {
-    "port": 4000,
+    "port": 4500,
     "env": "prod"
   },
   "mongo": {

@@ -14,6 +14,7 @@ let httplogSchema = new Schema({
   "ua": String,
   "eventTime": {type: Number, required: true},
   "ip": String,
+  "location": {type: String, default: null},
   "token": String
 });
 

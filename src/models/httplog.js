@@ -11,11 +11,11 @@ let httplogSchema = new Schema({
   "status": {type: String, required: true},
   "request": {type: Mixed},
   "response": {type: Mixed},
-  "ua": String,
+  "ua": {type: String, default: null},
   "eventTime": {type: Number, required: true},
-  "ip": String,
+  "ip": {type: String, default: null},
   "location": {type: String, default: null},
-  "token": String
+  "token": {type: String, default: null}
 });
 
 mongoose.model('httplog', httplogSchema);

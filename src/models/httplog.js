@@ -15,7 +15,8 @@ let httplogSchema = new Schema({
   "eventTime": {type: Number, required: true},
   "ip": {type: String, default: null},
   "location": {type: String, default: null},
-  "token": {type: String, default: null}
+  "token": {type: String, default: null},
+  "serverTime": {type: Date, default: Date.now}
 });
 
 mongoose.model('httplog', httplogSchema);

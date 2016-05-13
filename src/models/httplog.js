@@ -5,14 +5,14 @@ const Schema = mongoose.Schema;
 const Mixed = Schema.Types.Mixed;
 
 let httplogSchema = new Schema({
-  "apptag": {type: String, required: true},
-  "url": {type: String, required: true},
-  "method": {type: String, required: true},
-  "status": {type: String, required: true},
+  "apptag": {type: String, default: null},
+  "url": {type: String, default: null},
+  "method": {type: String, default: null},
+  "status": {type: String, default: null},
   "request": {type: Mixed, default: null},
   "response": {type: Mixed, default: null},
   "ua": {type: String, default: null},
-  "eventTime": {type: Number, required: true},
+  "eventTime": {type: Number},
   "ip": {type: String, default: null},
   "location": {type: String, default: null},
   "token": {type: String, default: null},

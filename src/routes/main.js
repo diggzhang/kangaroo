@@ -8,7 +8,9 @@ router.all('/', function *() {
 });
 
 router.post('/v3_5/httplog', function *() {
-  yield Httplog.save(this.request.body);
+  if (this.request.body.method != 'HEAD') {
+    yield Httplog.save(this.request.body);
+  }
   this.status = 204;
 });
 

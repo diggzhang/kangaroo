@@ -6,9 +6,9 @@ const Mixed = Schema.Types.Mixed;
 
 let httplogSchema = new Schema({
   "apptag": {type: String, default: null},
-  "url": {type: String, default: null},
-  "method": {type: String, default: null},
-  "status": {type: String, default: null},
+  "url": {type: String},
+  "method": {type: String},
+  "status": {type: String},
   "request": {type: Mixed, default: null},
   "response": {type: Mixed, default: null},
   "ua": {type: String, default: null},

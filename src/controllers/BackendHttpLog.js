@@ -16,6 +16,7 @@ class httplogController {
 
     if (httplogs.method == 'POST'
           || httplogs.method == 'PUT'
+          || httplogs.method == 'DELETE'
           || (_.endsWith(httplogs.url, '/me'))
     ) {
 

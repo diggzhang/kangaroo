@@ -4,7 +4,7 @@
   "description": "onions backend event collector, koala's brother.",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_PATH=./src/controllers NODE_ENV=dev nodemon ./backendTrack.js",
+    "dev": "NODE_PATH=./src/controllers NODE_ENV=dev pm2-dev ./backendTrack.js",
     "prod": "NODE_PATH=./src/controllers NODE_ENV=prod pm2 start ./backendTrack.js"
   },
   "repository": {
@@ -30,6 +30,7 @@
     "lodash": "^4.5.0",
     "mongoose": "^4.4.12",
     "raw-body": "^2.1.6",
-    "require-dir": "^0.3.0"
+    "require-dir": "^0.3.0",
+    "shell-task": "^1.0.0"
   }
 }

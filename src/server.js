@@ -6,7 +6,6 @@ import bodyParser from 'koa-bodyparser';
 import mongoose from 'mongoose';
 import { server, mongo } from './config';
 import requireDir from 'require-dir';
-import Task from 'shell-task';
 
 /**
  * Server configure
@@ -15,10 +14,6 @@ import Task from 'shell-task';
 const app = koa();
 const port = server.port;
 const env = server.env;
-
-const proxyDistUrl = "http://10.47.108.72:8989/api/v3_5/httplog";
-const gorScriptPath = __dirname + "/runGor.sh";
-const gorBin = __dirname + "/gor";
 
 /**
  * Connect to database
@@ -42,11 +37,6 @@ mongoose.connection.on("connected", () => {
 
   app.listen(server.port);
 
-  new Task("sh " + gorScriptPath + " " + proxyDistUrl + " " + gorBin + " " + server.port ).run(function (err, next) {
-    if (err) throw err;
-    console.log("gor have been proxy stream now.");
-    console.log(`proxy from ${server.port} to API: ${proxyDistUrl}`);
-  });
   console.log(`Backend http log server listening on port ${port}`);
   console.log(`Environment: ${env}`);
 });

@@ -20,6 +20,7 @@ class httplogController {
           || (_.endsWith(httplogs.url, '/me'))
     ) {
 
+      httplogs['reciveLogTime'] = Date.now();
       try {
         httplogs['location'] = qqwry.searchIP(httplogs.ip).Country;
       } catch(e) {

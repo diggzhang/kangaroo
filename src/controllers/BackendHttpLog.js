@@ -17,7 +17,7 @@ class httplogController {
     if (httplogs.method == 'POST'
           || httplogs.method == 'PUT'
           || httplogs.method == 'DELETE'
-          || (_.endsWith(httplogs.url, '/me'))
+          || (httplogs.method == 'GET' && (_.endsWith(httplogs.url, '/me')))
     ) {
 
       httplogs['reciveLogTime'] = Date.now();

@@ -2,6 +2,7 @@
 
 const router = require('koa-router')();
 const Httplog = require('BackendHttpLog');
+const HttplogV4 = require('BackendHttpLogV4');
 import rp from 'request-promise';
 
 router.all('/', function *() {
@@ -9,10 +10,10 @@ router.all('/', function *() {
 });
 
 router.post('/v3_5/httplog', function *() {
-  if (this.request.body.method != 'HEAD') {
-    yield Httplog.save(this.request.body);
-
-    this.header["accept"] = "*/*";
+  yield Httplog.save(this.request.body);
+  this.status = 204;
+    /**
+    this.header["accept"] = "*\/*";
     delete this.header["content-length"];
     this.header["content-type"] = "application/json";
     delete this.header["content-encoding"];
@@ -32,7 +33,11 @@ router.post('/v3_5/httplog', function *() {
         if (err) console.error(err);
       });
 
-  }
+     **/
+});
+
+router.post('/v4/httplog', function *() {
+  yield HttplogV4.save(this.request.body);
   this.status = 204;
 });
 

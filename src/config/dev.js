@@ -4,6 +4,6 @@ export default {
     "env": "dev"
   },
   "mongo": {
-    url: "mongodb://10.8.8.111/koala_dev",
+    url: "mongodb://localhost/kangaroo_dev",
   }
 };

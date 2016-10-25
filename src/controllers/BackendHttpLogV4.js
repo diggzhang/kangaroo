@@ -22,6 +22,14 @@ class httplogV4Controller {
       || (httplogs.method == 'GET' && ((httplogs.url).indexOf('progresses')) > -1)
     ) {
 
+      if ( (httplogs.url).indexOf('android-api') > -1 ) {
+        httplogs['os'] = "android";
+      } else if ( (httplogs.url).indexOf('ios-api') >-1 ) {
+        httplogs['os'] = "ios";
+      } else {
+        httplogs['os'] = "pc";
+      }
+
       httplogs['reciveLogTime'] = Date.now();
       try {
         httplogs['location'] = qqwry.searchIP(httplogs.ip).Country;

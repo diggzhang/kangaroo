@@ -19,7 +19,8 @@ let httplogSchema = new Schema({
   "token": {type: String, default: null},
   "serverTime": {type: Date, default: Date.now},
   "reciveLogTime": {type: Number, default: null},
-  "apiTime": {type: Number, default: null}
+  "apiTime": {type: Number, default: null},
+  "os": {type: String, default: null}
 }, {"strict": false, "validateBeforeSave":false});
 
 mongoose.model('v4_httplog', httplogSchema);
